@@ -1,0 +1,586 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quotation Receipt - Interior Designing</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #000000; /* Black background */
+                color: #FFD700; /* Gold text */
+            }
+            .container {
+                width: 70%;
+                margin: 0 auto;
+                background-color: #000000; /* Dark background for container */
+                padding: 30px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        .logo {
+        width: 250px; /* Increase the width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px;
+    }
+
+            .company-details {
+                font-size: 16px;
+                color: #FFD700;
+            }
+            .company-details span {
+                display: block;
+                margin: 5px 0;
+            }
+            h1 {
+                color: #FFD700; /* Gold color */
+                font-size: 32px;
+                margin-top: 10px;
+            }
+            .quotation-info {
+                margin-bottom: 30px;
+            }
+            .quotation-info div {
+                margin-bottom: 5px;
+            }
+            .quotation-info span {
+                font-weight: bold;
+                color: #FFD700;
+            }
+            .table-container {
+                margin-top: 20px;
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table {
+                width: 100%;
+                border: 2px solid #FFD700; /* Gold border */
+                border-radius: 8px;
+                margin-bottom: 30px;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #FFD700; /* Gold border */
+            }
+            th {
+                background-color: #000000; /* Black header */
+                color: #FFD700;
+                font-size: 16px;
+            }
+            td {
+                font-size: 14px;
+            }
+            .footer {
+                text-align: center;
+                font-size: 14px;
+                color: #FFD700;
+                margin-top: 30px;
+            }
+            .footer a {
+                color: #FFD700;
+                text-decoration: none;
+            }
+            .footer a:hover {
+                text-decoration: underline;
+            }
+            .context-menu {
+                position: absolute;
+                display: none;
+                background: #000000;
+                border: 1px solid #FFD700;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+            .context-menu button {
+                display: block;
+                width: 100%;
+                padding: 8px;
+                border: none;
+                background: none;
+                cursor: pointer;
+                text-align: left;
+                color: #FFD700;
+            }
+            .context-menu button:hover {
+                background: #333333;
+            }
+            .calligraphy-text {
+        font-family: "Brush Script MT", cursive;
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFD700;
+    }
+    .client-name-container {
+        margin-bottom: 20px;
+    }
+
+    .client-name-container label {
+        font-weight: bold;
+        color: #FFD700;
+        margin-right: 10px;
+    }
+
+    .client-name-container input {
+        background-color: #000;
+        color: #FFD700;
+        border: 2px solid #FFD700;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .client-name-container input::placeholder {
+        color: rgba(255, 215, 0, 0.6); /* Lighter gold placeholder */
+    }
+
+    .client-name-container input:focus {
+        border-color: #FFEA00; /* Brighter gold on focus */
+    }
+    .download-btn {
+        display: block; 
+        width: 200px; /* Adjust width */
+        padding: 12px;
+        background-color: #000000; /* Black background */
+        color: #FFD700; /* Gold text */
+        font-size: 16px;
+        font-weight: bold;
+        border: 2px solid #FFD700; /* Gold border */
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        margin: 20px auto; /* Center the button */
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .download-btn:hover {
+        background-color: #FFD700; /* Gold background on hover */
+        color: #000000; /* Black text */
+    }
+    .terms-container {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+#terms {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #FFD700; /* gold border */
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* black background */
+    color: #FFD700; /* gold text */
+    outline: none; /* remove blue glow on focus */
+}
+
+#terms:focus {
+    border: 1px solid #FFD700; /* keep border gold when focused */
+    box-shadow: 0 0 5px #FFD700; /* optional glow effect */
+}
+
+
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="https://res.cloudinary.com/dhb9hqfxf/image/upload/v1739901130/tejyash_logo_zqx3tc.png" alt="Company Logo" class="logo">
+                <div class="company-details">
+                    <span>TEJYAS</span>
+                    <span class="calligraphy-text">The Interior Elegance</span>
+                    <span>Email: info@metabyte.com | Phone: (123) 456-7890</span>
+                </div>
+            </header>
+
+            <div class="quotation-info">
+                <div><span>Quotation Date:</span> <span id="date"></span></div>
+                <div class="client-name-container">
+                    <label for="client-name">Client Name:</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Enter client name">
+                    <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+
+                </div>
+                
+                        </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.NO</th>
+                            <th>ROOM/AREA</th>
+                            <th>UNIT DESCRIPTION</th>
+                            <th>BOX/F&S/PANEL</th>
+                            <th>FINISH</th>
+                            <th><div id="widthColumn">WIDTH</th></div>
+                            <th><div id="heightColumn">HEIGHT</th></div>
+                            <th><div id="sftColumn">SFT</th></div>
+                            <th><div id="priceColumn">PRICE</th></div>
+                            <th>VALUE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="terms-container">
+                <label for="terms" class="terms-label">Terms & Conditions:</label>
+                <textarea id="terms" placeholder="Enter terms and conditions here..." rows="6"></textarea>
+            </div>
+            
+            <footer class="footer">
+                <p>Thank you for choosing TEJYASH INTERIORS . For more information, please visit our website at <a href="http://www.metabyte.com">www.metabyte.com</a>.</p>
+            </footer>
+        </div>
+
+        <div id="context-menu" class="context-menu">
+            <button onclick="addChildRow()">Add UNIT DESCRIPTION</button>
+            <button onclick="addParentRow()">Add ROOM/AREA</button>
+            <button onclick="deleteRow()">Delete Row</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+        <script>
+            const currentDate = new Date().toLocaleString();
+document.getElementById("date").innerText = currentDate;
+
+// Your JavaScript code for dynamic table generation and functionality (same as provided earlier)
+let data = [
+    { id: 1, room: "DRAWING ROOM", children: [
+        { description: "T.V. Unit", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 2, room: "DINNING ROOM", children: [
+        { description: "Crockery Unit", box: "Box", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 3, room: "LIVING ROOM", children: [
+        { description: "T.V. Unit", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 4, room: "POOJA ROOM", children: [
+        { description: "Pooja Unit", box: "Box", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 5, room: "UTILITY", children: [
+        { description: "Storage Unit", box: "Box", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 6, room: "MASTER BEDROOM", children: [
+        { description: "T.V. Unit", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Study Table", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Openable Wardrobe", box: "Box", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Loft", box: "F&S", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Closet # Sliding Wardrobe", box: "Box", finish: "Glass with Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Closet # Loft", box: "F&S", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Dressing Unit with Mirror", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+    { id: 7, room: "CHILDRENS BEDROOM", children: [
+        { description: "T.V. Unit", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Study Table", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "External Wardrobe", box: "Box", finish: "Glass with Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Loft", box: "F&S", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Closet # Wardrobe", box: "Box", finish: "Glass with Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Loft", box: "F&S", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+        { description: "Dressing Unit with Mirror", box: "Box/Panel", finish: "Laminate", width: "", height: "", sft: "", price: "", value: "", sftCalculated: false, valueCalculated: false },
+    ]},
+];
+
+let selectedRowIndex = null;
+let selectedChildIndex = null;
+let selectedIsParent = false;
+
+function renderTable() {
+const tableBody = document.getElementById("table-body");
+tableBody.innerHTML = "";
+let totalValue = 0; // Track total of VALUE column
+
+data.forEach((row, index) => {
+const parentRow = document.createElement("tr");
+parentRow.classList.add("parent-row");
+parentRow.dataset.index = index;
+parentRow.innerHTML = `
+    <td>${row.id}</td>
+    <td contenteditable="true" oninput="updateParent(${index}, this.innerText)">${row.room}</td>
+    <td colspan="8"></td>
+`;
+parentRow.addEventListener("contextmenu", (event) => showContextMenu(event, index, null, true));
+tableBody.appendChild(parentRow);
+
+row.children.forEach((child, childIndex) => {
+    totalValue += parseFloat(child.value) || 0; // Summing only VALUE column
+
+    const childRow = document.createElement("tr");
+    childRow.classList.add("child-row");
+    childRow.dataset.index = index;
+    childRow.dataset.childIndex = childIndex;
+    childRow.innerHTML = `
+        <td></td>
+        <td colspan="1"></td>
+        <td contenteditable="true" oninput="updateChild(${index}, ${childIndex}, 'description', this.innerText)">${child.description}</td>
+        <td contenteditable="true" oninput="updateChild(${index}, ${childIndex}, 'box', this.innerText)">${child.box}</td>
+        <td contenteditable="true" oninput="updateChild(${index}, ${childIndex}, 'finish', this.innerText)">${child.finish}</td>
+        <td contenteditable="true" onkeypress="onEnterPress(event, ${index}, ${childIndex}, 'width')">${child.width}</td>
+        <td contenteditable="true" onkeypress="onEnterPress(event, ${index}, ${childIndex}, 'height')">${child.height}</td>
+        <td>${child.sft}</td>
+        <td contenteditable="true" onkeypress="onEnterPress(event, ${index}, ${childIndex}, 'price')">${child.price}</td>
+        <td contenteditable="true" oninput="updateChild(${index}, ${childIndex}, 'value', this.innerText); updateTotal()">${child.value}</td>
+    `;
+    childRow.addEventListener("contextmenu", (event) => showContextMenu(event, index, childIndex, false));
+    tableBody.appendChild(childRow);
+});
+});
+
+// Append the total row at the end
+const totalRow = document.createElement("tr");
+totalRow.id = "total-row";
+totalRow.innerHTML = `
+<td colspan="5"><strong>Total</strong></td>
+<td id="total-value"><strong>${totalValue.toFixed(2)}</strong></td>
+`;
+tableBody.appendChild(totalRow);
+}
+
+function updateTotal() {
+let totalValue = 0;
+document.querySelectorAll(".child-row td:nth-child(10)").forEach(cell => {
+totalValue += parseFloat(cell.innerText) || 0;
+});
+document.getElementById("total-value").innerHTML = `<strong>${totalValue.toFixed(2)}</strong>`;
+}
+
+function showContextMenu(event, rowIndex, childIndex, isParent) {
+event.preventDefault();
+selectedRowIndex = rowIndex;
+selectedChildIndex = childIndex;
+selectedIsParent = isParent;
+const menu = document.getElementById("context-menu");
+menu.style.left = `${event.pageX}px`;
+menu.style.top = `${event.pageY}px`;
+menu.style.display = "block";
+}
+
+function hideContextMenu() {
+document.getElementById("context-menu").style.display = "none";
+}
+
+function addChildRow() {
+if (selectedRowIndex !== null) {
+data[selectedRowIndex].children.push({ description: "", box: "", finish: "", width: "", height: "", sft: "", price: "", value: "" });
+renderTable();
+}
+hideContextMenu();
+}
+
+function addParentRow() {
+data.push({ id: data.length + 1, room: "", children: [] });
+renderTable();
+hideContextMenu();
+}
+
+function deleteRow() {
+if (selectedRowIndex !== null) {
+if (selectedIsParent) {
+    if (data[selectedRowIndex].children.length > 0) {
+        alert("Cannot delete a Room/Area with items. Delete all child items first.");
+        return;
+    }
+    data.splice(selectedRowIndex, 1);
+} else if (selectedChildIndex !== null) {
+    data[selectedRowIndex].children.splice(selectedChildIndex, 1);
+}
+renderTable();
+}
+hideContextMenu();
+}
+
+function onEnterPress(event, rowIndex, childIndex, field) {
+if (event.key === "Enter") {
+event.preventDefault();
+data[rowIndex].children[childIndex][field] = event.target.innerText;
+if (field === "width" || field === "height") {
+    calculateSft(rowIndex, childIndex);
+}
+if (field === "sft" || field === "price") {
+    calculateValue(rowIndex, childIndex);
+}
+renderTable();
+}
+}
+
+function calculateSft(rowIndex, childIndex) {
+const child = data[rowIndex].children[childIndex];
+if (child.width && child.height) {
+child.sft = (parseFloat(child.width) * parseFloat(child.height)).toFixed(2);
+}
+}
+
+function calculateValue(rowIndex, childIndex) {
+const child = data[rowIndex].children[childIndex];
+if (child.sft && child.price) {
+child.value = (parseFloat(child.sft) * parseFloat(child.price)).toFixed(2);
+}
+}
+
+window.addEventListener("click", (event) => {
+const menu = document.getElementById("context-menu");
+if (event.target !== menu && !menu.contains(event.target)) {
+menu.style.display = "none";
+}
+});
+
+function updateParent(index, value) {
+data[index].room = value;
+}
+
+function updateChild(index, childIndex, field, value) {
+data[index].children[childIndex][field] = value;
+if (field === "value") updateTotal();
+} 
+renderTable();
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'a4');  // Standard A4 size
+    const element = document.documentElement;
+    const elementsToCapture = document.querySelectorAll('body > *:not(#widthColumn):not(#heightColumn):not(#sftColumn):not(#priceColumn):not(#downloadButton)'); // Updated selector
+
+        // Logo loaded successfully, proceed with PDF generation
+        html2canvas(element, {
+            scale: 100,  // Increase the scale for higher quality
+            scrollY: -window.scrollY, // Capture the scroll position
+            useCORS: true,  // Allow cross-origin images
+            width: document.documentElement.scrollWidth,  // Capture full page width
+            height: document.documentElement.scrollHeight  // Capture full page height
+        }).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+
+            // Set the A4 page size in mm (210mm x 297mm)
+            const imgWidth = 220;  // A4 width in mm
+            let imgHeight = (canvas.height * imgWidth) / canvas.width;  // Adjust height based on width to maintain aspect ratio
+
+            // Double the height to make the image taller
+            imgHeight *= 1;  // Double the calculated image height
+
+            // Add the first image to the first page
+            doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+            // If content exceeds one page, create another page and continue adding images
+            let heightLeft = imgHeight;
+            let position = 0;
+
+            while (heightLeft > 0) {
+                position -= 297;  // Move to next page
+                doc.addPage();
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= 297;
+            }
+
+            // Save the generated PDF
+            doc.save('full_page_doubled_height.pdf');
+        }).catch(error => {
+            console.error("Error capturing HTML:", error);
+            alert("An error occurred while generating the PDF. Please check the console for details.");
+        });
+    }
+
+    // Handle image loading failure
+    img.onerror = function() {
+        console.error('Error loading logo image.');
+        alert('Failed to load the logo image. Please check the image path.');
+    };
+    function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const element = document.documentElement;
+
+    // Columns to hide: 6 (width), 7 (height), 8 (sft), 9 (price)
+    const columnsToHide = [5, 6, 7, 8]; // 0-based index for td/th
+
+    // Hide the columns
+    const rows = document.querySelectorAll("table tr");
+    rows.forEach(row => {
+        columnsToHide.forEach(index => {
+            const cell = row.children[index];
+            if (cell) {
+                cell.classList.add("hide-pdf-column");
+            }
+        });
+    });
+
+    // Add CSS to hide the class
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .hide-pdf-column {
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    html2canvas(element, {
+        scale: 2,
+        scrollY: -window.scrollY,
+        useCORS: true,
+        width: document.documentElement.scrollWidth,
+        height: document.documentElement.scrollHeight
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 220;
+        let imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        while (heightLeft > 297) {
+            position -= 297;
+            doc.addPage();
+            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= 297;
+        }
+
+        doc.save('quotation.pdf');
+
+        // Restore columns
+        rows.forEach(row => {
+            columnsToHide.forEach(index => {
+                const cell = row.children[index];
+                if (cell) {
+                    cell.classList.remove("hide-pdf-column");
+                }
+            });
+        });
+
+        document.head.removeChild(style); // Clean up
+    }).catch(error => {
+        console.error("Error capturing HTML:", error);
+        alert("An error occurred while generating the PDF.");
+    });
+}
+
+        </script>
+    </body>
+    </html>
